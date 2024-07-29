@@ -8,33 +8,35 @@ Data-anonymize
   sha256 
   You can configure these based on your own requirement, this is maintained in config/anonymize.py
           ```json
-          {
-              "read_path": "file:///app/data/original/",
-              "anonymizer_config": [
-                  {
-                      "method": "sha256",
-                      "parameters": {
-                          "column_name": "first_name"
-                      }
-                  },
-                  {
-                      "method": "replace",
-                      "parameters": {
-                          "column_name": "last_name",
-                          "replace_to": "****"
-                      }
-                  },
-                  {
-                      "method": "replace_with_regex",
-                      "parameters": {
-                          "column_name": "address",
-                          "replace_from_regex": "R\\d",
-                          "replace_to": "*"
-                      }
-                  }
-              ],
-              "sink_path": "file:///app/data/anonymize/"
-          }
+          
+        {
+            "read_path": "file:///app/data/original/",
+            "anonymizer_config": [
+                {
+                    "method": "sha256",
+                    "parameters": {
+                        "column_name": "first_name"
+                    }
+                },
+                {
+                    "method": "replace",
+                    "parameters": {
+                        "column_name": "last_name",
+                        "replace_to": "****"
+                    }
+                },
+                {
+                    "method": "replace_with_regex",
+                    "parameters": {
+                        "column_name": "address",
+                        "replace_from_regex": "R\\d",
+                        "replace_to": "*"
+                    }
+                }
+            ],
+            "sink_path": "file:///app/data/anonymize/"
+        }
+ 
           ```
   
   read_path :  from where to read the csv data 
