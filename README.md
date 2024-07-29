@@ -61,11 +61,13 @@ Workflows :
   3.anonymize : if only to anonymize data
 
 How to run?
-  1. run build.sh, it will create a dist folder
+```ssh
+  1. run build.sh, # it will create a dist folder
   2. cd dist
   3. docker build -t anonymize .
   4. docker run -v "$(pwd)/data:/app/data" anonymize
   5. A new folder will be created named data, which will contain anonymize and original data.
+```
 
 <img width="1640" alt="image" src="https://github.com/user-attachments/assets/e9f906d3-5302-4dc7-8a91-f53710f52583">
 
