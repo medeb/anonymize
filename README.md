@@ -7,7 +7,7 @@ Data-anonymize
   replace_with_regex
   sha256 
   You can configure these based on your own requirement, this is maintained in config/anonymize.py
-          ```
+          ```json
           {
               "read_path": "file:///app/data/original/",
               "anonymizer_config": [
