@@ -7,8 +7,9 @@ Data-anonymize
   replace_with_regex
   sha256 
   You can configure these based on your own requirement, this is maintained in config/anonymize.py
+          ```
           {
-              "read_path": "file:///app/data/original/", 
+              "read_path": "file:///app/data/original/",
               "anonymizer_config": [
                   {
                       "method": "sha256",
@@ -27,13 +28,14 @@ Data-anonymize
                       "method": "replace_with_regex",
                       "parameters": {
                           "column_name": "address",
-                          "replace_from_regex": "R\d",
+                          "replace_from_regex": "R\\d",
                           "replace_to": "*"
                       }
                   }
               ],
               "sink_path": "file:///app/data/anonymize/"
           }
+          ```
   
   read_path :  from where to read the csv data 
   sink_path :  where to write the anonymize data
@@ -42,7 +44,7 @@ Data Generator :
   Data generator function is responsible for generating fake data. It can be configed in config/data_generator.py
 
       {
-        "number_of_records": 1000, #
+        "number_of_records": 1000, 
         "columns": ["first_name", "last_name", "address", "date_of_birth"],  # can be extended further
         "sink_path": "file:///app/data/original/"
       }
